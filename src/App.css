@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+
+  display: block;
+
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+ /* body {
+
+  background-image: url('puppy.jpg');
+  background-blend-mode:screen;
+
+} */
+body {
+  background:url("./Images/neutral.jpg");
+  background-size: cover;
+  background-repeat: repeat-x;     /* For flexibility */
+  background-attachment: fixed;
+
+}
+
+#midway{
+  color: White;
+  float: left;
+
+
+}
+
+.dog-card {
+  position: relative;
+  width: 225px;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+.dog-image-name {
+  display: none;
+  position: absolute;
+  bottom: 15%;
+  left: 2%;
+  text-align: center;
+  background-color: black;
+  width: 225px;
+  color: white;
+}
+
+.dog-image-breed {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 2%;
+  text-align: center;
+  background-color: black;
+  width: 225px;
+  color: white;
+}
+
+.dog-card:hover .dog-image-name {
+  display: block;
+}
+
+.dog-card:hover .dog-image-breed {
+  display: block;
+}
+
+#cute {
+  float: left
+}
