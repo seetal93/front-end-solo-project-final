@@ -24,7 +24,7 @@ class DBFindEntry extends Component {
     retrieveData = (event) => {
       axios({
         method: 'get',
-        url: 'http://localhost:8080/soloProjectBackEnd2/api/fetch/getDBEntry/' + this.state.searchInput,
+        url: 'http://localhost:8090/soloProjectBackEnd2/api/fetch/getDBEntry/' + this.state.searchInput,
         responseType: 'json'
       }).then(response => {
         this.setState({
@@ -57,7 +57,7 @@ class DBFindEntry extends Component {
       <br />
       About: {this.state.about}
         <br />
-      Image: {this.state.image}
+      <img src={this.state.image} alt="dog" />
       </div>
       :null}
   </div >

@@ -13,6 +13,10 @@ class DBUpdateEntry extends Component {
        };
    }
 
+   handleInputUpdateInput = (event) => {
+       this.setState({ updateInput: event.target.value });
+   }
+
    handleInputbreedOfDog= (event) => {
         this.setState({ breedOfDog: event.target.value });
     }
@@ -28,7 +32,7 @@ class DBUpdateEntry extends Component {
    updateDBEntry = (event) => {
        axios({
            method: 'put',
-           url: 'http://localhost:8080/soloProjectBackEnd2/api/fetch/updateDBEntry/' + this.state.updateInput,
+           url: 'http://localhost:8090/soloProjectBackEnd2/api/fetch/updateDBEntry/' + this.state.updateInput,
            data: {
                breedOfDog: this.state.breedOfDog,
                about: this.state.about,
@@ -67,7 +71,7 @@ class DBUpdateEntry extends Component {
                 </form>
                 { this.state.update ?
                   <div>
-                  <p> You have update a breed on the website! </p>
+                  <p> You have successfully updated a breed on the website! </p>
                   </div>
                   :null }
             </div>

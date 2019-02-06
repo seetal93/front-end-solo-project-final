@@ -27,7 +27,7 @@ class DBAddEntry extends Component {
    updateDBEntry = (event) => {
        axios({
            method: 'post',
-           url: 'http://localhost:8080/soloProjectBackEnd2/api/fetch/addDBEntry',
+           url: 'http://localhost:8090/soloProjectBackEnd2/api/fetch/addDBEntry',
            data: {
              breedOfDog: this.state.breedOfDog,
              about: this.state.about,

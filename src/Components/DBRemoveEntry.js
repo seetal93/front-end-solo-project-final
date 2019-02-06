@@ -20,7 +20,7 @@ class DBRemoveEntry extends Component {
    deleteData = (event) => {
        axios({
            method: 'delete',
-           url: 'http://localhost:8080/soloProjectBackEnd2/api/fetch/removeDBEntry/' + this.state.breedOfDog,
+           url: 'http://localhost:8090/soloProjectBackEnd2/api/fetch/deleteDBEntry/' + this.state.breedOfDog,
            data: {
                breedOfDog: this.state.breedOfDog
            }

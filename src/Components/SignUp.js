@@ -24,7 +24,7 @@ class SignUp extends Component {
     createUserAccount = (event) => {
        axios({
            method: 'post',
-           url: 'http://localhost:8080/soloProjectBackEnd2/api/user/addUser',
+           url: 'http://localhost:8090/soloProjectBackEnd2/api/user/addUser',
            data: {
                userName: this.state.userName,
                password: this.state.password,
