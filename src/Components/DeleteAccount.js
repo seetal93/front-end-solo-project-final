@@ -17,6 +17,7 @@ class DeleteAccount extends Component {
     }
 
     deleteAccount = (event) => {
+      if(this.state.userName){
         axios({
             method: 'delete',
             url: 'http://localhost:8090/soloProjectBackEnd2/api/user/deleteUser/' + this.state.userName,
@@ -35,7 +36,7 @@ class DeleteAccount extends Component {
             alert("Unable to delete account.");
         });
     }
-
+}
     render() {
             return (
 
@@ -45,12 +46,12 @@ class DeleteAccount extends Component {
                     </p>
                     <form>
                         <p>Enter Username to proceed deleting your account.</p>
-                        <input type="text" placeholder="Delete Account" onChange={(this.handleInput)} name="Delete"></input>
+                        <input type="text" placeholder="Delete Account" onChange={this.handleInput} name="Delete"></input>
                         <input type="button" value="Submit" onClick={this.deleteAccount}></input>
                     </form>
                     {this.state.userRemoval ?
                       <div>
-                      <p> You have removed a user account. </p>
+                      <p> You have removed user account. </p>
                       </div>
                       :null }
                 </div>

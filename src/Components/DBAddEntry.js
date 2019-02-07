@@ -25,6 +25,7 @@ class DBAddEntry extends Component {
    }
 
    updateDBEntry = (event) => {
+     if(this.state.breedOfDog && this.state.about && this.state.image){
        axios({
            method: 'post',
            url: 'http://localhost:8090/soloProjectBackEnd2/api/fetch/addDBEntry',
@@ -43,7 +44,7 @@ class DBAddEntry extends Component {
                 alert("Unable to add breed to table.")
             });
         }
-
+      }
       render() {
        return (
            <div>

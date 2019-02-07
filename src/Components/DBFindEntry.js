@@ -22,6 +22,7 @@ class DBFindEntry extends Component {
     }
 
     retrieveData = (event) => {
+      if(this.state.searchInput){
       axios({
         method: 'get',
         url: 'http://localhost:8090/soloProjectBackEnd2/api/fetch/getDBEntry/' + this.state.searchInput,
@@ -39,7 +40,7 @@ class DBFindEntry extends Component {
             alert("Database not cooperating.")
           });
       }
-
+}
       render() {
         return(
   <div className= "Search" >

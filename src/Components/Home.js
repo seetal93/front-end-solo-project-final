@@ -10,11 +10,11 @@ const Home = () => {
     <div className="homeContainer">
     <p></p>
     <img src = {dog} alt= "main" width="225px" height="170px"/>
-    <h4> {tagline} </h4>
+    <h2> {tagline} </h2>
     <h4 id="cute"> {intro} </h4>
     <DogNames />
     <p></p>
-    <h2> {about} </h2>
+    <h4> {about} </h4>
     </div>
 
 

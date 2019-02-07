@@ -14,7 +14,7 @@ class SignUp extends Component {
     handleInputUsername = (event) => {
             this.setState({ userName: event.target.value });
 
-        }
+    }
 
     handleInputPassword = (event) => {
             this.setState({ password: event.target.value });
@@ -22,6 +22,7 @@ class SignUp extends Component {
     }
 
     createUserAccount = (event) => {
+      if(this.state.userName && this.state.password){
        axios({
            method: 'post',
            url: 'http://localhost:8090/soloProjectBackEnd2/api/user/addUser',
@@ -38,8 +39,9 @@ class SignUp extends Component {
         .catch(function (error) {
            console.log(error);
            alert("Unable to create account.")
-       });
+       })
    }
+ }
    render() {
           return (
    <div>

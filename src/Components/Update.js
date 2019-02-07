@@ -25,8 +25,9 @@ class Update extends Component {
     }
 
     updateAccount = (event) => {
+      if(this.state.updateInput && this.state.userName && this.state.password){
         axios({
-            method: 'post',
+            method: 'put',
             url: 'http://localhost:8090/soloProjectBackEnd2/api/user/updateUser/' + this.state.updateInput,
             data: {
                 userName: this.state.userName,
@@ -42,6 +43,7 @@ class Update extends Component {
             alert("unable to update account.");
         });
     }
+}
 
 render() {
         return (
@@ -66,7 +68,7 @@ render() {
                   <p> You have successfully updated users' details! </p>
                   </div>
                   :null }
-                }
+
             </div>
 
         );

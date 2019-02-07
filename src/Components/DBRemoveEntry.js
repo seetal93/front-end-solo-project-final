@@ -18,6 +18,7 @@ class DBRemoveEntry extends Component {
    }
 
    deleteData = (event) => {
+     if(this.state.breedOfDog){
        axios({
            method: 'delete',
            url: 'http://localhost:8090/soloProjectBackEnd2/api/fetch/deleteDBEntry/' + this.state.breedOfDog,
@@ -34,7 +35,7 @@ class DBRemoveEntry extends Component {
            alert("unable to remove breed.");
        });
    }
-
+}
    render() {
        return (
            <div>
@@ -43,7 +44,7 @@ class DBRemoveEntry extends Component {
                    </p>
                    <form>
                         <p>Enter breed and click to remove it. </p>
-                        <input type="text" placeholder="Delete Breed..." onChange={(this.handleInput)} name="Delete"></input>
+                        <input type="text" placeholder="Delete Breed..." onChange={this.handleInput} name="Delete"></input>
                         <input type="button" value="Submit" onClick={this.deleteData}></input>
                     </form>
                     { this.state.removal ?

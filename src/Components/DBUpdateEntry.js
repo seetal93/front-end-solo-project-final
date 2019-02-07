@@ -30,6 +30,7 @@ class DBUpdateEntry extends Component {
    }
 
    updateDBEntry = (event) => {
+     if(this.state.updateInput && this.state.breedOfDog && this.state.about && this.state.image){
        axios({
            method: 'put',
            url: 'http://localhost:8090/soloProjectBackEnd2/api/fetch/updateDBEntry/' + this.state.updateInput,
@@ -49,7 +50,7 @@ class DBUpdateEntry extends Component {
            alert("Unable to update breed.")
        });
    }
-
+}
    render() {
            return (
                <div>
