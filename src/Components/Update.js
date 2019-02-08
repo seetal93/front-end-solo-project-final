@@ -8,6 +8,7 @@ class Update extends Component {
             updateInput: "",
             userName: "",
             password: "",
+            updatemessage: "",
             userupdate: false
         };
     }
@@ -36,7 +37,8 @@ class Update extends Component {
           })
           .then(response => {
             this.setState({
-              usersupdate: true
+              usersupdate: true,
+              updatemessage: response.data.updatemessage
           })
         }).catch(function (error) {
             console.log(error);
@@ -65,7 +67,7 @@ render() {
                 </form>
                 {this.state.userupdate ?
                   <div>
-                  <p> You have successfully updated users' details! </p>
+                  <p> {this.state.updatemessage} </p>
                   </div>
                   :null }
 

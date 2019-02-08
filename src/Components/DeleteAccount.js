@@ -6,6 +6,7 @@ class DeleteAccount extends Component {
         super();
         this.state = {
             userName: "",
+            deletionmessage: "",
             userRemoval: false
         }
         this.deleteAccount = this.deleteAccount.bind(this);
@@ -28,7 +29,8 @@ class DeleteAccount extends Component {
           })
           .then(response => {
             this.setState({
-              userRemoval: true
+              userRemoval: true,
+              deletionmessage: response.data.deletionmessage
             })
 
         }).catch(function (error) {
@@ -51,7 +53,7 @@ class DeleteAccount extends Component {
                     </form>
                     {this.state.userRemoval ?
                       <div>
-                      <p> You have removed user account. </p>
+                      <p> {this.state.deletionmessage} </p>
                       </div>
                       :null }
                 </div>

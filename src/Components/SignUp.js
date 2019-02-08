@@ -7,6 +7,7 @@ class SignUp extends Component {
         this.state = {
             userName: "",
             password: "",
+            verify: "",
             addition: false
         };
     }
@@ -35,7 +36,11 @@ class SignUp extends Component {
           this.setState({
             addition: true
           })
-        })
+          if (typeof response.data == "string") {
+                       this.setState({ verify: response.data })
+                   } else {
+                       this.setState({ verify: "Account created successfully" })
+        }})
         .catch(function (error) {
            console.log(error);
            alert("Unable to create account.")
@@ -54,14 +59,10 @@ class SignUp extends Component {
                   <br></br>
                   <input type="password" placeholder="Password" value={this.state.password} onChange={this.handleInputPassword}></input>
                   <br></br>
-
+                  <p> {this.state.verify} </p>
                   <input type="button" value="Submit" onClick={this.createUserAccount}></input>
               </form>
-              { this.state.addition ?
-                <div>
-                <p> You have successfully created an account. </p>
-                </div>
-                : null }
+
           </div>
 
       );
