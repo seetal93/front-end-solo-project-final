@@ -29,7 +29,7 @@ class Update extends Component {
       if(this.state.updateInput && this.state.userName && this.state.password){
         axios({
             method: 'put',
-            url: 'http://localhost:8090/soloProjectBackEnd2/api/user/updateUser/' + this.state.updateInput,
+            url: 'http://52.151.88.98:3000/soloProjectBackEnd2/api/user/updateUser/' + this.state.updateInput, 
             data: {
                 userName: this.state.userName,
                 password: this.state.password,

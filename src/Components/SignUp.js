@@ -26,7 +26,7 @@ class SignUp extends Component {
       if(this.state.userName && this.state.password){
        axios({
            method: 'post',
-           url: 'http://localhost:8090/soloProjectBackEnd2/api/user/addUser',
+           url: 'http://52.151.88.98:3000/soloProjectBackEnd2/api/user/addUser',
            data: {
                userName: this.state.userName,
                password: this.state.password,

@@ -21,7 +21,7 @@ class DeleteAccount extends Component {
       if(this.state.userName){
         axios({
             method: 'delete',
-            url: 'http://localhost:8090/soloProjectBackEnd2/api/user/deleteUser/' + this.state.userName,
+            url: 'http://52.151.88.98:3000/soloProjectBackEnd2/api/user/deleteUser/' + this.state.userName,
             responseType: 'json',
             data: {
                 userName: this.state.userName
